@@ -11,21 +11,21 @@ API REST para un sistema de gestión de tickets de soporte, construida con **Spr
 
 ---
 
-## 📌 Descripción
+## Descripción
 
 Backend de un sistema tipo *helpdesk*: los usuarios se registran, inician sesión y gestionan tickets de soporte (crear, listar, actualizar, cambiar estado y eliminar). Pensado como API para un frontend en Angular.
 
-## ✨ Features
+## Features
 
-- 🔐 **Autenticación JWT** — login sin sesiones ni cookies, stateless.
-- 👥 **Roles de usuario** — `ADMIN`, `AGENT`, `USER`.
-- 🎫 **CRUD completo de tickets** — con estado, prioridad, asignación y creador.
-- ✅ **Validación de datos** — Bean Validation (`jakarta.validation`) en todos los DTOs de entrada.
-- 🧱 **Manejo global de errores** — respuestas de error consistentes en toda la API.
-- 🔑 **Passwords hasheadas** — BCrypt, nunca se persisten en texto plano.
-- 🌐 **CORS configurado** — listo para consumir desde un frontend Angular en `localhost:4200`.
+- **Autenticación JWT** — login sin sesiones ni cookies, stateless.
+- **Roles de usuario** — `ADMIN`, `AGENT`, `USER`.
+- **CRUD completo de tickets** — con estado, prioridad, asignación y creador.
+- **Validación de datos** — Bean Validation (`jakarta.validation`) en todos los DTOs de entrada.
+- **Manejo global de errores** — respuestas de error consistentes en toda la API.
+- **Passwords hasheadas** — BCrypt, nunca se persisten en texto plano.
+- **CORS configurado** — listo para consumir desde un frontend Angular en `localhost:4200`.
 
-## 🛠️ Stack
+## Stack
 
 | Categoría | Tecnología |
 |---|---|
@@ -37,7 +37,7 @@ Backend de un sistema tipo *helpdesk*: los usuarios se registran, inician sesió
 | Build | Maven |
 | Utilidades | Lombok |
 
-## 🏗️ Arquitectura
+## Arquitectura
 
 ```
 src/main/java/dev/dangonzalez/ticket_backend/
@@ -52,7 +52,7 @@ src/main/java/dev/dangonzalez/ticket_backend/
 └── service/            # Lógica de negocio
 ```
 
-## 🚀 Empezar
+## Empezar
 
 ### Requisitos
 
@@ -85,7 +85,7 @@ La app funciona out-of-the-box con valores por defecto para desarrollo local. Pa
 | `DB_PASSWORD` | Password de PostgreSQL | `postgres` |
 | `JWT_SECRET` | Clave secreta para firmar los JWT | placeholder de desarrollo |
 
-> ⚠️ **Importante:** antes de desplegar a cualquier entorno real, definí un `JWT_SECRET` propio (por ejemplo con `openssl rand -base64 64`) y credenciales de base de datos que no sean las de desarrollo.
+> **Importante:** antes de desplegar a cualquier entorno real, definí un `JWT_SECRET` propio (por ejemplo con `openssl rand -base64 64`) y credenciales de base de datos que no sean las de desarrollo.
 
 ### 4. Ejecutá la aplicación
 
@@ -95,7 +95,7 @@ La app funciona out-of-the-box con valores por defecto para desarrollo local. Pa
 
 La API queda disponible en `http://localhost:8080/api/v1`.
 
-## 📡 Endpoints
+## Endpoints
 
 ### Auth (`/api/v1/auth`) — públicos
 
@@ -209,10 +209,10 @@ Todas las respuestas de error siguen esta misma estructura:
 }
 ```
 
-## 🧪 Colección de pruebas
+## Colección de pruebas
 
 En `ticket-backend-api/` hay una colección [Bruno](https://www.usebruno.com/) con requests listos para probar los endpoints de Auth y Tickets. La carpeta `environments/` (con variables como el token de sesión) está excluida del repo por contener datos locales.
 
-## 📄 Licencia
+## Licencia
 
 MIT
