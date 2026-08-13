@@ -1,0 +1,26 @@
+info:
+  name: Create Ticket
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}/tickets"
+  body:
+    type: json
+    data: |-
+      {
+        "title": "No carga el dashboard",
+        "description": "Error 500 al entrar",
+        "priority": "HIGH",
+        "createdBy": 6
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
