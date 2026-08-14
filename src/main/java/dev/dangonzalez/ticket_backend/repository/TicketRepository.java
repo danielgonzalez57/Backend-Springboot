@@ -13,4 +13,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 // implementa todo por ti. Se inyecta en TicketService vía constructor, tal cual
 // inyectarías @InjectRepository(Ticket) en un service de Nest+TypeORM.
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
+
+    // Se usan en UserService.deleteUser(): un usuario no se puede borrar si
+    // todavía tiene tickets creados o asignados (violaría la FK created_by/
+    // assigned_to). "CreatedById"/"AssignedToId" -> Spring Data navega la
+    // relación (ticket.createdBy.id / ticket.assignedTo.id) sin escribir JPQL.
+    boolean existsByCreatedById(Long userId);
+
+    boolean existsByAssignedToId(Long userId);
 }

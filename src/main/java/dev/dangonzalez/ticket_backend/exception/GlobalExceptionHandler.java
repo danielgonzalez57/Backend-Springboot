@@ -64,6 +64,13 @@ public class GlobalExceptionHandler {
         return buildResponse(HttpStatus.CONFLICT, ex.getMessage(), request);
     }
 
+    // Lanzada en UserService.deleteUser() -> 409 Conflict.
+    @ExceptionHandler(UserHasTicketsException.class)
+    public ResponseEntity<ErrorResponse> handleUserHasTickets(UserHasTicketsException ex,
+                                                                 HttpServletRequest request) {
+        return buildResponse(HttpStatus.CONFLICT, ex.getMessage(), request);
+    }
+
     // Excepción que lanza Spring Security cuando authenticationManager.authenticate()
     // falla (credenciales incorrectas en el login) -> 401.
     @ExceptionHandler(AuthenticationException.class)
